@@ -15,7 +15,7 @@ resource "google_compute_network" "vpc_network" {
 resource "google_compute_instance" "vm_instance" {
   description  = "VM para testar criação automatica com Terraform"
   project      = "treinamento-254613"
-  name         = "terraform_instance"
+  name         = "terraform-instance"
   machine_type = "f1-micro"
 
   boot_disk {
@@ -33,8 +33,8 @@ resource "google_compute_instance" "vm_instance" {
   }
 
   scheduling {
-    automatic_restart = true
-    preemptible       = true
+    automatic_restart = false
+    preemptible       = false
   }
 
 }
